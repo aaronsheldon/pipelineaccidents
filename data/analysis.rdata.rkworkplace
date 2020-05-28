@@ -1,0 +1,10 @@
+base::::file:///home/aaron/Documents/Statistics/pipeline/data
+script::::file:///home/aaron/Documents/Statistics/pipeline/source/analysis.r
+script::::file:///home/aaron/Documents/Statistics/pipeline/source/load.data.r
+script::::file:///home/aaron/Documents/Statistics/pipeline/source/coerce.data.r
+workspace::sidebar,0::
+commandlog::sidebar,3::
+filebrowser::sidebar,0::
+pendingjobs::sidebar,4::
+console::sidebar,3::
+helpsearch::sidebar,3::

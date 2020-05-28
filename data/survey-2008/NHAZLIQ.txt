@@ -1,0 +1,277 @@
+Hazardous Liquid or Carbon Dioxide Systems Annual Report data file fields
+
+*************************************************************************************
+The following table describes the fields in the accompanying TXT file.  The table shows the
+field name used by PHMSA Pipeline Safety, the data type, the maximum size of the field and a description of 
+the field's meaning.  The word "Part" at a description's beginning indicates the part of the
+hazardous liquid annual report Form RSPA F 7000.1-1 (04/2006) that the field represents.
+*************************************************************************************
+
+ORIGINAL        CHAR(1), 	Indicates that the report is the initial filing of the report
+SUPPLEMENT      CHAR(1), 	Indicates that the report is a supplemental filing of the report
+YR 		NUMBER(4), 	Year being reported 
+RPTID 	        NUMBER(8) ,	DOT assigned ID number
+HL_SUP_ID       NUMBER(8), 	A unique ID assigned to every report submitted 
+SYSTEM_TYPE	VARCHAR(50),	Type of pipeline system
+
+*************************************************************************************
+The following fields are the operator information.  Part A on the form.
+*************************************************************************************
+NAME 		VARCHAR2(80), 	Part A-1. - Name of operator or company submitting report
+PARENT		VARCHAR(80),	Part A-1. - Name of parent company
+OFSTREET  	VARCHAR2(60), 	Part A-2. - Street address of reporting company
+OFCITY    	VARCHAR2(30),	Part A-2. - City of reporting company
+OFCOUNTY  	VARCHAR2(30),	Part A-2. - County of reporting company
+OFSTATE   	VARCHAR2(2),  	Part A-2. - State of reporting company
+OFZIP     	VARCHAR2(10), 	Part A-2. - Zip code of reporting company
+OPERATOR_ID 	NUMBER(5), 	Part A-3. - DOT assigned number for the operator
+HQSTREET  	VARCHAR2(60),	Part A-4. - Headquarter's street address if different from office
+HQCITY    	VARCHAR2(30),	Part A-4. - City where headquarters is located
+HQCOUNTY  	VARCHAR2(30),	Part A-4. - County where headquarters is located
+HQSTATE   	VARCHAR2(2),	Part A-4. - State where headquarters is located
+HQZIP     	VARCHAR2(10),	Part A-4. - Zip code of headquarters
+
+*************************************************************************************
+The following fields are miles of steel pipe ONSHORE lines in the system at end of 
+year, by protection.  Part B on the form.
+*************************************************************************************
+CPBONM		NUMBER 	-- Miles of cathodically protected/bare/onshore
+CPCONM		NUMBER	-- Miles of cathodically protected/coated/onshore
+CUBONM		NUMBER	-- Miles of cathodically unprotected/bare/onshore
+CUCONM		NUMBER	-- Miles of cathodically unprotected/coated/onshore
+*************************************************************************************
+The following fields are miles of steel pipe OFFSHORE lines in the system at end of 
+year, by protection.  Part B on the form.
+*************************************************************************************
+CPBOFFM		NUMBER	-- Miles of cathodically protected/bare/offshore
+CPCOFFM		NUMBER	-- Miles of cathodically protected/coated/offshore
+CUBOFFM		NUMBER	-- Miles of cathodically unprotected/bare/offshore
+CUCOFFM		NUMBER	-- Miles of cathodically unprotected/coated/offshore
+*************************************************************************************
+The following fields are total of miles of steel pipes in the system at end of 
+year, by protection.  Part B on the form.
+*************************************************************************************
+CPBMT		NUMBER	-- Total miles cathodically protected/bare/total
+CPCMT		NUMBER	-- Total miles cathodically protected/coated/total
+CUPMT		NUMBER	-- Total miles cathodically unprotected/bare/total
+CUCMT		NUMBER	-- Total miles cathodically unprotected/coated/total
+*************************************************************************************
+The following fields are total miles that could affect high consequence ares(HCAs) in the system at end of 
+year. Part B on the form.
+*************************************************************************************
+HCAONM		NUMBER	-- Miles that could affect HCAs/onshore
+HCAOFFM		NUMBER	-- Miles that could affect HCAs/offshore
+HCAMT		NUMBER	-- Total miles that could affect HCAs
+
+*************************************************************************************
+The following fields are miles of steel pipe ONSHORE lines in the system at end of 
+year, by nominal pipe size (NPS).  Part C on the form.
+*************************************************************************************
+STONM_1		NUMBER	-- NPS 4" or less
+STONM_2		NUMBER	-- NPS 6" 
+STONM_3		NUMBER	-- NPS 8" 
+STONM_4		NUMBER	-- NPS 10" 
+STONM_5		NUMBER	-- NPS 12" 
+STONM_6		NUMBER	-- NPS 14"
+STONM_7		NUMBER	-- NPS 16"
+STONM_8		NUMBER	-- NPS 18"
+STONM_9		NUMBER	-- NPS 20"
+STONM_10	NUMBER	-- NPS 22"
+STONM_11	NUMBER	-- NPS 24"
+STONM_12	NUMBER	-- NPS 26"
+STONM_13	NUMBER	-- NPS 28"
+STONM_14	NUMBER	-- NPS 30"
+STONM_15	NUMBER	-- NPS 32"
+STONM_16	NUMBER	-- NPS 34"
+STONM_17	NUMBER	-- NPS 36"
+STONM_18	NUMBER	-- NPS over 36"
+*************************************************************************************
+The following fields are miles of steel pipe OFFSHORE lines in the system at end of 
+year, by nominal pipe size (NPS).  Part C on the form.
+*************************************************************************************
+STOFFM_1	NUMBER	-- NPS 4" or less
+STOFFM_2	NUMBER	-- NPS 6"
+STOFFM_3	NUMBER	-- NPS 8"
+STOFFM_4	NUMBER	-- NPS 10"
+STOFFM_5	NUMBER	-- NPS 12"
+STOFFM_6	NUMBER	-- NPS 14"
+STOFFM_7	NUMBER	-- NPS 16"
+STOFFM_8	NUMBER	-- NPS 18"
+STOFFM_9	NUMBER	-- NPS 20"
+STOFFM_10	NUMBER	-- NPS 22"
+STOFFM_11	NUMBER	-- NPS 24"
+STOFFM_12	NUMBER	-- NPS 26"
+STOFFM_13	NUMBER	-- NPS 28"
+STOFFM_14	NUMBER	-- NPS 30"
+STOFFM_15	NUMBER	-- NPS 32"
+STOFFM_16	NUMBER	-- NPS 34"
+STOFFM_17	NUMBER	-- NPS 36"
+STOFFM_18	NUMBER	-- NPS over 36" 
+
+*************************************************************************************
+The following fields are miles of pipe by decade installed.  Part D on the form.
+*************************************************************************************
+DINSTM_1	NUMBER	-- Miles of pipe installed pre 1920 or unknown 
+DINSTM_2	NUMBER	-- Miles of pipe installed 1920-1929
+DINSTM_3	NUMBER	-- Miles of pipe installed 1930-1939
+DINSTM_4	NUMBER	-- Miles of pipe installed 1940-1949
+DINSTM_5	NUMBER	-- Miles of pipe installed 1950-1959
+DINSTM_6	NUMBER	-- Miles of pipe installed 1960-1969
+DINSTM_7	NUMBER	-- Miles of pipe installed 1970-1979
+DINSTM_8	NUMBER	-- Miles of pipe installed 1980-1989
+DINSTM_9	NUMBER	-- Miles of pipe installed 1990-1999
+DINSTM_10	NUMBER	-- Miles of pipe installed 2000-2009
+DINSTMT		NUMBER	-- Total miles of pipe installed
+
+*************************************************************************************
+The following fields are miles of High Frequency (HF) electronic resistence weld (ERW) pipe by decade installed.  
+Part E on the form.
+*************************************************************************************
+ERWHM_1		NUMBER	-- Miles of HF ERW pipe installed Pre 1940 or unknown 
+ERWHM_2		NUMBER	-- Miles of HF ERW pipe installed 1940-1949
+ERWHM_3		NUMBER	-- Miles of HF ERW pipe installed 1950-1959
+ERWHM_4		NUMBER	-- Miles of HF ERW pipe installed 1960-1969
+ERWHM_5		NUMBER	-- Miles of HF ERW pipe installed 1970-1979
+ERWHM_6		NUMBER	-- Miles of HF ERW pipe installed 1980-1989
+ERWHM_7		NUMBER	-- Miles of HF ERW pipe installed 1990-1999
+ERWHM_8		NUMBER	-- Miles of HF ERW pipe installed 2000-2009
+ERWHMT		NUMBER	-- Total miles of HF ERW pipes
+*************************************************************************************
+The following fields are miles of Low Frequency and DC (LF) electronic resistence weld (ERW) pipe by decade installed.  
+Part E on the form.
+*************************************************************************************
+ERWLM_1		NUMBER	-- Miles of LF ERW pipe installed Pre 1940 or unknown 
+ERWLM_2		NUMBER	-- Miles of LF ERW pipe installed 1940-1949
+ERWLM_3		NUMBER	-- Miles of LF ERW pipe installed 1950-1959
+ERWLM_4		NUMBER	-- Miles of LF ERW pipe installed 1960-1969
+ERWLM_5		NUMBER	-- Miles of LF ERW pipe installed 1970-1979
+ERWLM_6		NUMBER	-- Miles of LF ERW pipe installed 1980-1989
+ERWLM_7		NUMBER	-- Miles of LF ERW pipe installed 1990-1999
+ERWLM_8		NUMBER	-- Miles of LF ERW pipe installed 2000-2009
+ERWLMT		NUMBER	-- Total miles of LF ERW pipes
+*************************************************************************************
+The following fields are total miles of electronic resistence weld (ERW) pipe by decade installed.  
+Part E on the form.
+*************************************************************************************
+ERWTM_1		NUMBER	-- Total miles of ERW pipe installed Pre 1940 or unknown
+ERWTM_2		NUMBER	-- Total miles of ERW pipe installed 1940-1949
+ERWTM_3		NUMBER	-- Total miles of ERW pipe installed 1950-1959
+ERWTM_4		NUMBER	-- Total miles of ERW pipe installed 1960-1969
+ERWTM_5		NUMBER	-- Total miles of ERW pipe installed 1970-1979
+ERWTM_6		NUMBER	-- Total miles of ERW pipe installed 1980-1989
+ERWTM_7		NUMBER	-- Total miles of ERW pipe installed 1990-1999
+ERWTM_8		NUMBER	-- Total miles of ERW pipe installed 2000-2009
+ERWTMT		NUMBER	-- Total miles of ERW pipes
+
+*************************************************************************************
+The following fields are miles of ONSHORE pipes by Specified Minimum Yield Strength (SMYS).  
+Part F on the form.
+*************************************************************************************
+YSLONM		NUMBER	-- Less than or equal to 20% SMYS
+YSGONM		NUMBER	-- Greater than 20% SMYS
+*************************************************************************************
+The following fields are miles of OFFSHORE pipes by Specified Minimum Yield Strength (SMYS).  
+Part F on the form.
+*************************************************************************************
+YSLOFFM		NUMBER	-- Less than or equal to 20% SMYS
+YSGOFFM		NUMBER	-- Greater than 20% SMYS 
+
+*************************************************************************************
+The following field is miles of regulated gathering lines.  
+Part G on the form.
+*************************************************************************************
+REGGATHM	NUMBER	-- Miles of regulated gathering lines
+
+*************************************************************************************
+The following fields are number of breakout tanks by given commodity type.  
+Part H on the form.
+*************************************************************************************
+BTNPMS		NUMBER	-- Indicates that operator has submitted breakout tank info via NPMS
+BT1COM		NUMBER	-- Commodity type (row 1 on form)
+BT1NUM1		NUMBER	-- Total number of tanks <=50000 Bbls 
+BT1NUM2		NUMBER	-- Total number of tanks 50001-100000 Bbls 
+BT1NUM3		NUMBER	-- Total number of tanks 100001-150000 Bbls 
+BT1NUM4		NUMBER	-- Total number of tanks >150000 Bbls  
+BT1NUMT		NUMBER	-- Total number of tanks for commodity type on first row. 
+BT2COM		NUMBER	-- Commodity type (row 2 on form)
+BT2NUM1		NUMBER	-- Total number of tanks <=50000 Bbls
+BT2NUM2		NUMBER	-- Total number of tanks 50001-100000 Bbls
+BT2NUM3		NUMBER	-- Total number of tanks 100001-150000 Bbls 
+BT2NUM4		NUMBER	-- Total number of tanks >150000 Bbls
+BT2NUMT		NUMBER	-- Total number of tanks for commodity type on second row.
+
+*************************************************************************************
+The following fields are volume transported in barrels-miles, by system type.  
+Part I on the form.
+*************************************************************************************
+VTM_1	NUMBER	-- Volume transported in barrel-miles: Crude Oil
+VTM_2	NUMBER	-- Volume transported in barrel-miles: HVLs
+VTM_3	NUMBER	-- Volume tranpported in barrel-miles: anhydrous ammonia only
+VTM_4	NUMBER	-- Volume transported in barrel-miles: Refined and/or petroleum products
+VTM_5	NUMBER	-- Volume transported in barrel-miles: CO2 or other nonflammable  non-toxic fluids
+VTM_6	NUMBER	-- Volume transported in barrel-miles: CO2 only
+
+*************************************************************************************
+The following fields are integerity inspections conducted and actions taken based on inspection.  
+Mileage inspected using the folloiwng in-line inspections (ILI) tools. 
+Part J.1 (a.- e.) on the form.
+*************************************************************************************
+II1_1	NUMBER	-- J.1.a, Corrosion or metal loss tools
+II1_2	NUMBER	-- J.1.b, Dent or deformation tools
+II1_3	NUMBER	-- J.1.c, Crack or long seam defect detection tools
+II1_4	NUMBER	-- J.1.d, Any other internal inspection tools
+II1_T	NUMBER	-- J.1.e, Total mileage inspected in calendar year using in-line inspection tools
+*************************************************************************************
+The following fields are integerity inspections conducted and actions taken based on inspection.  
+Actions taken based on ILI. 
+Part J.2 (a.-c.3) on the form.
+*************************************************************************************
+II2_1	NUMBER	-- J.2.a,   Based on ILI data how many anomalies were excavated because they met the operator’s criteria for excavation.
+II2_2	NUMBER	-- J.2.b,   Total number of conditions operator’s criteria.
+II2_3	NUMBER	-- J.2.c.1, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “immediate repair condition” [195.452(h)(4)(i)]
+II2_4	NUMBER	-- J.2.c.2, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “60 day condition” [195.452(h)(4)(ii)]
+II2_5	NUMBER	-- J.2.c.3, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “180-day condition” [195.452(h)(4)(iii)]
+*************************************************************************************
+The following fields are integerity inspections conducted and actions taken based on inspection.  
+Pressure testing. 
+Part J.3 (a.-d.) on the form.
+*************************************************************************************
+II3_1	NUMBER	-- J.3.a, Total mileage inspected by pressure testing.
+II3_2	NUMBER	-- J.3.b, Total number of ruptures (complete failure of pipe wall) during hydrostatic testing.
+II3_3	NUMBER	-- J.3.c, Total number of leaks (less than complete wall failure but including escape of test medium) during hydrostatic testing.
+II3_4	NUMBER	-- J.3.d, Total number of hydrostatic test failures repaired during calendar year.
+*************************************************************************************
+The following fields are integerity inspections conducted and actions taken based on inspection.  
+Other inspection techniques, inluding direct assessment. 
+Part J.4 (a.-c.) on the form.
+*************************************************************************************
+II4_1	NUMBER	-- J.4.a,   Total mileage inspected by inspection techniques (other than pressure testing and in-line inspection)
+II4_2	NUMBER	-- J.4.b.1, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “immediate repair condition” [195.452(h)(4)(i)]
+II4_3	NUMBER	-- J.4.b.2, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “60 day condition” [195.452(h)(4)(ii)]
+II4_4	NUMBER	-- J.4.b.3, Total Number of Anomalies Within an HCA Segment Meeting the Definition of: “180-day condition” [195.452(h)(4)(iii)]
+II4_5	NUMBER	-- J.4.c,   Total number of conditions identified by other inspection techniques (Lines 4.b.1 + 4.b.2 + 4.b.3) identified and repaired or otherwise mitigated in calendar year.
+*************************************************************************************
+The following fields are integerity inspections conducted and actions taken based on inspection.  
+Total mileage inspected (all methods) and actions taken. 
+Part J.5 (a.-b.) on the form.
+*************************************************************************************
+II5_1	NUMBER	-- J.5.a,   Total mileage inspected
+II5_2	NUMBER	-- J.5.b,   Total number of conditions repaired or otherwise mitigated
+
+*************************************************************************************
+The following fields are mileage of baseline assesments completed by year. 
+Part K (a.-g.) on the form.
+*************************************************************************************
+BA_1	NUMBER	-- K.a,    Between January 1,1996 and December 31,2002 (previously acceptable assessments)
+BA_2	NUMBER	-- K.a,    Between January 1,2003 and December 31,2003
+BA_3	NUMBER	-- K.a,    Between January 1,2004 and December 31,2004
+BA_4	NUMBER	-- K.a,    Between January 1,2005 and December 31,2005
+BA_5	NUMBER	-- K.a,    Between January 1,2006 and December 31,2006
+BA_6	NUMBER	-- K.a,    Between January 1,2007 and December 31,2007
+BA_7	NUMBER	-- K.a,    Between January 1,2008 and December 31,2008
+
+*************************************************************************************
+Part F, Preparer and Authorized Signature information can be requested through the FOIA process.
+*************************************************************************************
+DOR 	DATE, 	-- Date report received in PHMSA Pipeline Safety office 
+DOE	DATE	-- Date report entered in the system.

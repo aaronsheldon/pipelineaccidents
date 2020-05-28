@@ -1,0 +1,179 @@
+Hazardous Liquid Accident data file fields 
+
+*************************************************************************************
+The following table describes the fields in the accompanying TXT files.  The table shows the
+field name used by OPS, the data type, the maximum size of the field and a description of 
+the field's meaning.  The word "Part" at a description's beginning indicates the part of the
+transmission incident report Form RSPA F 7000-1 (01-2001) that the field represents.
+
+Note: All dates are YYYYMMDD
+*************************************************************************************
+
+FIELD NAME		TYPE 			DESCRIPTION
+
+RPTID			NUMBER(8)		DOT assigned Id number for report (Year report received + sequential number)
+CAUSE			NUMBER(2)		Accident cause code.  (see CAUSE_TXT)
+CAUSE_TXT		VARCHAR2(80)
+OPERATOR_ID       	NUMBER(5)		Part A.1.a - DOT assigned number for the operator
+OWNER_OPERATOR_ID 	NUMBER(5)		Part A.1.b - Operator ID for owner, if the owner has one and if it is known
+NAME              	VARCHAR2(80)	        Part A.1.c - Name of the pipeline operator
+OPSTREET          	VARCHAR2(60)            Part A.1.d - Operator Street Address
+OPCITY            	VARCHAR2(30)            Part A.1.e - Operator City
+OPCOUNTY          	VARCHAR2(30)            Part A.1.e - Operator County
+OPSTATE           	VARCHAR2(2)             Part A.1.e - Operator State
+OPZIP             	VARCHAR2(10)            Part A.1.e - Operator Zip Code
+IHOUR             	NUMBER(4)		Part A.2 - Time the accident took place, 24 hour clock
+IDATE             	DATE			Part B.1. - Date the incident occured (YYYYMMDD)
+IYEAR			NUMBER(4)		Year Accident occurred, derived from the accident date.
+LATITUDE		VARCHAR2(20)		A.3.a Latitude, if available
+LONGITUDE   		VARCHAR2(20)		A.3.a Longitude, if available
+ACCITY 			VARCHAR2(25)		A.3.b Accident city
+ACCOUNTY 		VARCHAR2(25)		A.3.b Accident county
+ACSTATE 		CHAR(2)			A.3.c Accident state
+ACZIP 			VARCHAR2(10)		A.3.c Accident ZIP (if applicable)
+MPVST 			VARCHAR2(25)		A.3.d Mile post/valve station; see note for SURVNO
+SURVNO 			VARCHAR2(25)		A.3.d Survey station number
+TELRN 			VARCHAR2(12)		A.4 NRC telephonc report number
+TELID 			VARCHAR2(12)		A.4 NRC telephonc report record ID number (input by OPS)
+TELDT 			DATE			A.4 Date incident reported to NRC (YYYYMMDD)
+PPPRP 			NUMBER(12)		A.5 Public/private property damages amount ($)
+EMRPRP 			NUMBER(12)		A.5 Cost of emergency response phase ($)
+ENVPRP 			NUMBER(12)		A.5 Cost of environmental remediation ($)
+OPCPRP 			NUMBER(12)		A.5 Other public costs ($)
+OPCPRPO			VARCHAR2(50)		A.5 Other public costs description
+PRODPRP 		NUMBER(12)		A.5 Value of product lost ($)
+OPPRP 			NUMBER(12)		A.5 Value of operator property damage ($)
+OOPPRP 			NUMBER(12)		A.5 Other operator costs ($)
+OOPPRPO			VARCHAR2(50)		A.5 Other operator costs description
+PRPTY 			NUMBER(13)		A.5 Total costs ($)
+SPILLED			CHAR(3)			A.6 Did commodity spill?
+COMM			VARCHAR2(50)		A.6.b Commodity name
+CLASS			NUMBER(1)		A.6.b Commodity class (see CLASS_TXT)
+CLASS_TXT		VARCHAR2(93)
+SPUNIT			NUMBER(1)		A.6.c Spill unit (see SPUNIT_TXT)
+SPUNIT_TXT		VARCHAR2(8)	
+LOSS 			NUMBER(10)	 	A.6.c Estimated loss amount, in barrels or gallons (see SPUNIT)
+RECOV			NUMBER(10) 		A.6.c Estimated amount recovered, in barrels or gallons (see SPUNIT)
+GEN_CAUSE		NUMBER(1)		General Cause code; This is required to be filled in if the spill is
+						small (5 gallons to 5 barrels).  The general cause reflects the grouping of                                                   the causes of the larger spills (see form, Part H, sections H1 through H8).  For data analysis purposes, this view maps the causes of the larger spills to the general causes.
+
+GEN_CAUSE_TXT		VARCHAR2(26)
+LINE_SEG		VARCHAR2(25)		C.1.a Line segment name or ID
+IFED 			CHAR(3)			C.1.b Accident on Federal land other than Continental Shelf?
+INTER 			CHAR(3)  		C.1.c Is pipeline interstate?
+OFFSHORE 		CHAR(3) 		C. Was the incident offshore(Y) or onshore (N)?
+OFFAREA 		VARCHAR2(20)		C.1.d Offshore area or
+BNUMB 			VARCHAR2(6)		C.1.d Offshore block number (either this field or OFFAREA will be filled in)
+OFFST 			VARCHAR2(2)		C.1.d Offshore of what state
+OCS 			CHAR(3)			C.1.d Did incident occur on outer continental shelf?
+OPPROP 			CHAR(3)			C.2 Operator's secured property?
+PIPEROW 		CHAR(3)			C.2 Pipeline right-of-way?
+HCA    			CHAR(3)			C.2 High Consequence Area?
+HCADESC			VARCHAR2(50)		C.2 High Consequence Area description
+SYSPRT 			NUMBER(2)		C.3 Part of system involved in accident code (see SYSPRT_TXT)
+SYSPRT_TXT		VARCHAR2(76)
+SYSPRTO 		VARCHAR2(50)		C.3 Part of system involved, other
+FAIL_OC			NUMBER(2)		C.4 Failure occured on: (see FAIL_OC_TXT)
+FAIL_OC_TXT		VARCHAR2(20)
+FAIL_OCO 		VARCHAR2(50)		C.4 Part of system involved, other
+PRTYR 			NUMBER(4)		C. Year component installed
+INC_PRS 		NUMBER(10,3)		C.5.a Pressure at point and time of incident
+MOP	 		NUMBER(10,3)		C.5.b Maximum operating pressure 
+OPRS        		CHAR(3)			C.5.c Did overpressurization occur relating to accident?
+LRTYPE			NUMBER(2)		C.3.a Type of leak or rupture code (see LRTYPE_TXT)
+LRTYPE_TXT		VARCHAR2(8)
+LRTYPEO     		VARCHAR2(50)		C.3.a Type of leak, Other
+LEAK	 		NUMBER(2)		C.3.a If LRTYPE = 1 (leak), type of leak code (see LEAK_TXT)
+LEAK_TXT		VARCHAR2(20)
+PUNC_DIAM		NUMBER(4) 		C.3.a If LEAK = 3 (puncture), then puncture diameter
+RUPTURE			NUMBER(2) 		C.3.a If LRTYPE = 2 (rupture), type of rupture code (see RUPTURE_TXT)
+RUPTURE_TXT		VARCHAR2(26) 	
+RUPLN 			NUMBER(10) 		C.3.a Length of rupture in inches, if rupture
+PROPLN 			NUMBER(10) 		C.3.a Length of propagation, total, both sides in feet, 
+UBLKVM			CHAR(3) 		C.3.b Upstream block valve type, Manual?
+UBLKVA			CHAR(3) 		C.3.b Upstream block valve type, Automatic?
+UBLKVR			CHAR(3) 		C.3.b Upstream block valve type, Remote control?
+UBLKVC			CHAR(3) 		C.3.b Upstream block valve type, Check valve?
+DBLKVM			CHAR(3) 		C.3.b Downstream block valve type, Manual?
+DBLKVA			CHAR(3) 		C.3.b Downstream block valve type, Automatic?
+DBLKVR			CHAR(3) 		C.3.b Downstream block valve type, Remote control?
+DBLKVC			CHAR(3) 		C.3.b Downstream block valve type, Check valve?
+SEGISO			NUMBER(10) 		C.3.c Length of segment isolated 
+VLVDIST 		NUMBER(10) 		C.3.d Distance between valves
+SEGCONF			CHAR(3)			C.3.e Is segment configured for internal inspection tools?
+INLINE			NUMBER(2) 		C.3.f Had there been an in-line inspection device run at the point of 						failure? (see INLINE_TXT)
+INLINE_TXT		VARCHAR2(50) 	
+DRHRMF			CHAR(3) 		C.3.g High resolution magnetic flux tool
+DRHRMFY			NUMBER(4) 		C.3.g Year High resolution magnetic flux tool run
+DRLRMF			CHAR(3) 		C.3.g Low resolution magnetic flux tool
+DRLRMFY			NUMBER(4) 		C.3.g Year Low resolution magnetic flux tool run
+DRUT			CHAR(3) 		C.3.g UT tool
+DRUTY			NUMBER(4) 		C.3.g Year UT tool run
+DRGEO			CHAR(3) 		C.3.g Geometry tool
+DRGEOY			NUMBER(4) 		C.3.g Year Geometry tool run
+DRCAL			CHAR(3) 		C.3.g Caliper tool
+DRCALY			NUMBER(4) 		C.3.g Year Caliper tool run
+DRCRK			CHAR(3) 		C.3.g Crack tool
+DRCRKY			NUMBER(4) 		C.3.g Year Crack tool run
+DRHARD			CHAR(3) 		C.3.g Hard spot tool
+DRHARDY			NUMBER(4) 		C.3.g Year Hard spot tool run
+DROTH			CHAR(3) 		C.3.g Other tool
+DROTHY			NUMBER(4) 		C.3.g Year Other tool run
+NPS	 		NUMBER(6,2)		D.1 Nominal pipe size in inches
+WALLTHK 		NUMBER(7,2)		D.2 Pipe wall thickness in inches
+SPEC 			VARCHAR2(20)		D.3 Component specification
+SMYS 			NUMBER(6)		D.3 Specified Minimum Yield Strength (SMYS)
+SEAM 			VARCHAR2(50)		D.4 Seam type
+VALVE 			VARCHAR2(50)		D.5 Valve type
+MANU 			VARCHAR2(50)		D.6 Component manufaturer
+MANYR 			NUMBER(4)		D.6 Year component manufactured
+LOCLK	 		NUMBER(2)		E.1 Area of incident code (see LOCLK_TXT)
+LOCLK_TXT		VARCHAR2(26)
+LOCLKO 			VARCHAR2(50)		E.1 Other location not specified above
+DEPTH_COV		NUMBER(4)		E.2 Depth of cover in inches
+FATAL 			NUMBER(5) 		F.1.a Total number of fatalities
+EFAT			NUMBER(4) 		F.1.a Number of operator employees fatalities
+NFAT			NUMBER(4) 		F.1.a Number of contractor employees working for 
+GPFAT			NUMBER(4) 		F.1.a Number of general public fatalities
+INJURE			NUMBER(6) 		F.1.a Total number of injured
+EINJ			NUMBER(5) 		F.1.a Number of operator employees injured
+NINJ			NUMBER(5) 		F.1.a Number of contractor employees working for
+GPINJ			NUMBER(5) 		F.1.a Number of general public injured
+SHUTDOWN		CHAR(3)			F.1.b Was pipeline shutdown due to leak?
+SHUTDAY			NUMBER(4)		F.1.b Number of days line was shutdown
+SHUTHR			NUMBER(2)		F.1.b Number of hours line was shutdown
+SHUTMIN			NUMBER(2)		F.1.b Number of minutes line was shutdown
+IGNITE 			CHAR(3)			F.1.c Did gas ignite
+EXPLO 			CHAR(3)			F.1.c Was there an explosion
+EVAC			CHAR(3)			F.1.d Was there an evacuattion?
+EVACNO			NUMBER(5)		F.1.d Number of people evacuated
+EVAC_REASON		NUMBER(2)		F.1.d Reason for evacuation code (see EVAC_REASON_TXT)
+EVAC_REASON_TXT		VARCHAR2(40)
+STHH 			NUMBER(3)		F.1.f Elapsed Time Until Area Was Made Safe / Hours 
+STMN 			NUMBER(2)		F.1.f Elapsed Time Until Area Was Made Safe / Minutes above hours
+FISH			CHAR(3)			F.2.a Fish/aquatic impacted?
+BIRDS			CHAR(3)			F.2.a Birds impacted?
+TERRESTRIAL		CHAR(3)			F.2.a Terrestrial impacted?
+SOIL			CHAR(3)			F.2.b Was soil contaminated?
+SOIL_YRD		NUMBER(10)		F.2.b If soil contaminated, estimated number of cubic yards
+IMPACT			CHAR(3)			F.2.c Long term impact assessment performed
+REMEDIAL		CHAR(3)			F.2.d Anticipated remediation
+RSURFACE		CHAR(3)			F.2.d Surface water?
+RGROUND			CHAR(3)			F.2.d Ground water?
+RSOIL			CHAR(3)			F.2.d Soil?
+RVEG			CHAR(3)			F.2.d Vegetation?
+RWILD			CHAR(3)			F.2.d Wildlife?
+WATER			CHAR(3)			F.2.e Was water contaminated?
+AMT_IN_WATER 		NUMBER(10)		F.2.e Amount of product in water, in barrels
+OCEAN			CHAR(3)			F.2.e Spilled in ocean/seawater?
+SURFACE			CHAR(3)			F.2.e Spilled in surface water?
+GROUNDW			CHAR(3)			F.2.e Spilled in groundwater?
+DRINK			CHAR(3)			F.2.e Spilled in drinking water?
+DRINKSRC 		NUMBER(2)		F.2.e If DRINK = 'Y' what source was contaminated (see DRINKSRC_TXT)
+DRINKSRC_TXT		VARCHAR2(20)
+COMP_BASED		CHAR(3)			G.1 Was a computer based leak detection capability in place?
+DETECTED		NUMBER(2)		G.2 What initially detected the release (see by DETECTED_TXT)
+DETECTED_TXT		VARCHAR2(50)
+DETECTEDO		VARCHAR2(50)		G.2 Detected other description
+DURLEAK_DAY 		NUMBER(3)		G.3 Duration of leak, days
+DURLEAK_HR		NUMBER(2)		G.3 Duration of leak, hours

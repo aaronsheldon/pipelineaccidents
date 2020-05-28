@@ -1,0 +1,109 @@
+Hazardous Liquid Accident data file fields
+
+*************************************************************************************
+The following table describes the fields in the accompanying TXT files.  The table shows the
+field name used by OPS, the data type, the maximum size of the field and a description of 
+the field's meaning.  The word "Part" at a description's beginning indicates the part of the
+transmission incident report Form RSPA F 7000-1 (01-2001) that the field represents.
+
+Note: All dates are YYYYMMDD
+*************************************************************************************
+
+FIELD NAME		TYPE 			DESCRIPTION
+
+RPTID			NUMBER(8)		DOT assigned Id number for report (Year report received + sequential number)
+CAUSE			NUMBER(2)		Accident cause code.  (see CAUSE_TXT)
+CAUSE_TXT		VARCHAR2(80)
+PIPE_COAT 		NUMBER(2)		H1.a Pipe coated code (see PIPE_COAT_TXT)
+PIPE_COAT_TXT	        VARCHAR2(8)
+VIS_EXAM		NUMBER(2)		H1.b Visual examination code (see VIS_EXAM_TXT)
+VIS_EXAM_TXT		VARCHAR2(20)
+VIS_EXAMO 		VARCHAR2(50)		H1.b Description of corrosion not specified above
+COR_CAUSE 		NUMBER(2)		H1.c Cause of corrosion code (see COR_CAUSE_TXT)
+COR_CAUSE_TXT		VARCHAR2(30)
+COR_CAUSEO 		VARCHAR2(50)		H1.c Cause not specified above
+PROT 			CHAR(1)			H1.d Was corroded part under cathodic protection (Y/N)
+CPYR 			NUMBER(4)		H1.d If yes, then year protection began
+PREV_DAM		CHAR(1)			H1.e Was pipe previously damaged in the area of corrosion(Y/N)
+PREV_DAM_YR 		NUMBER(4)		H1.e How long previously damaged to incident (years)
+PREV_DAM_MO 		NUMBER(4)		H1.e How long previously damaged to incident (months)
+PREV_DAM_UK 		CHAR(1)			H1.e Previous damage to incident time unknown (Y/N)
+EARTH_MOVE 		NUMBER(2)		H2.3 Code (see EARTH_MOVE_TXT)
+EARTH_MOVE_TXT		VARCHAR2(15)
+EARTH_MOVEO 		VARCHAR2(50)		H2.3 Other earth movement description
+FLOODS			NUMBER(2)		H2.5 Heavy rains/floods (see FLOODS_TXT)
+FLOODS_TXT		VARCHAR2(15)
+FLOODSO			VARCHAR2(50)		H2.5 Other flood/rain related description
+TEMPER			NUMBER(2)		H2.6 Temperature (see TEMPER_TXT)
+TEMPER_TXT		VARCHAR2(15)
+TEMPERO			VARCHAR2(50)		H2.6 Other temperature related description
+THIRD_PARTY_GRP 	NUMBER(2)		H3.9.a Third party excavation group (see THIRD_PARTY_GRP_TXT)
+THIRD_PARTY_GRP_TXT	VARCHAR2(46)
+THIRD_PARTY_TYPE	NUMBER(2)		H3.9.b Third party type (see THIRD_PARTY_TYPE_TXT)
+THIRD_PARTY_TYPE_TXT	VARCHAR2(70)
+THIRD_PARTY_TYPEO	VARCHAR2(50)		H3.9.b. Third party type other description
+EXCAV_TYPE		NUMBER(2)		H3.9.c Excavation type code (see EXCAV_TYPE_TXT)
+EXCAV_TYPE_TXT		VARCHAR2(46)	
+EXCAV_ON		CHAR(1)			H3.9.d Excavation was an ongoing activity (Y/N)
+EXCAV_LAST_CONTACT 	NUMBER(4)		H3.9.d If yes, year of last contact
+NOTIF 			CHAR(1)			H3.9.e Did operator get prior notification of excavation activity (Y/N)
+NOTIF_DATE 		DATE			H3.9.e If yes, date notified
+NOTIF_RCVD		NUMBER(2)		H3.9.c Notification received from code (see 
+MARKED			CHAR(1)			H3.9.d Was pipeline marked (Y/N)
+TEMP_MARK  		NUMBER(2)		H3.9.d.i Temporary markings (see TEMP_MARK_TXT)
+TEMP_MARK_TXT		VARCHAR2(8)
+PERM_MARK  		CHAR(1)			H3.9.d.ii Permanent markings (Y/N)
+ACC_MARK  		NUMBER(2)		H3.9.d.iii Marks were (see ACC_MARK_TXT)
+ACC_MARK_TXT		VARCHAR2(10)
+MKD_IN_TIME		CHAR(1)			H3.9.d.iv Was pipeline marked within required time (Y/N)
+FIRE_EXPLO  		NUMBER(2)		H4.10 Fire/explosion as primary cause of incident (see FIRE_EXPLO_TXT)
+FIRE_EXPLO_TXT		VARCHAR2(8)
+PIPE_BODY		NUMBER(2)		H5.14 Body of Pipe (see PIPE_BODY_TXT)
+PIPE_BODY_TXT		VARCHAR2(8)
+PIPE_BODYO		VARCHAR2(50)		H5.14 Body of Pipe other description
+COMPONENT		NUMBER(2)		H5.15 Component (see COMPONENT_TXT)
+COMPONENT_TXT		VARCHAR2(16)
+COMPONENTO		VARCHAR2(50)		H5.15 Component other description
+JOINT 			NUMBER(2)		H5.16 Joint (see JOINT_TXT)
+JOINT_TXT		VARCHAR2(8)
+JOINTO			VARCHAR2(50)		H5.16 Joint other description
+BUTT			NUMBER(2)		H5.17 Butt weld (see BUTT_TXT)
+BUTT_TXT		VARCHAR2(16)
+BUTTO			VARCHAR2(50)		H5.17 Butt weld other description
+FILLET			NUMBER(2)		H5.18 Fillet weld (see FILLET_TXT)
+FILLET_TXT		VARCHAR2(16)
+FILLETO   		VARCHAR2(50)		H5.18 Fillet weld other description
+PIPE_SEAM		NUMBER(2)		H5.19 Pipe seam (see PIPE_SEAM_TXT)
+PIPE_SEAM_TXT		VARCHAR2(10)
+PIPE_SEAMO		VARCHAR2(50)		H5.19 Pipe seam other description
+FAIL_TYPE		NUMBER(2)		H5.a Type of failure (see FAIL_TYPE_TXT)
+FAIL_TYPE_TXT		VARCHAR2(30)
+CONS_DEF		NUMBER(2)		H5.a Type of construction defect (see CONS_DEF_TXT)
+CONS_DEF_TXT		VARCHAR2(40)
+PIPE_DAMAGE		CHAR(1)			H5.b Was failure due to pipe damaged in transport (Y/N)
+PRS_TEST 		CHAR(1)			H5.c Part that leaked pressure tested before incident(Y/N)
+TEST_MO 		NUMBER(2)		H5.d If PRS_TEST = yes, month of the test
+TEST_DAY 		NUMBER(2)		H5.d If PRS_TEST = yes, day of the test
+TEST_YR 		NUMBER(4)		H5.d If PRS_TEST = yes, year of the test
+TEST_MED 		NUMBER(2)		H5.e If PRS_TEST = yes, test medium (see TEST_MED_TXT)
+TEST_MED_TXT		VARCHAR2(16)
+TEST_MEDO 		VARCHAR2(50)		H5.e If PRS_TEST = yes, Test medium other
+TEST_TP 		NUMBER(3)		H5.f If PRS_TEST = yes, Time held at test pressure in hours
+TEST_PRS 		NUMBER(7,3)		H5.g If PRS_TEST = yes, Estimated test pressure at point of incident, PSIG
+MALFUNC  		NUMBER(2)		H6.20 Malfunction of control/relief equipment (see MALFUNC_TXT)
+MALFUNC_TXT		VARCHAR2(16)
+MALFUNCO 		VARCHAR2(50)		H6.20 Malfunction of control/relief equipment, other
+THREADS			NUMBER(2)		H6.21 Threads stripped, broken pipe coupling (see THREADS_TXT) 
+THREADS_TXT		VARCHAR2(20)
+THREADSO 		VARCHAR2(50)		H6.21 Threads stripped, broken pipe coupling, other description
+SEAL			NUMBER(2)		H6.22 Seal failure (see SEAL_TXT)
+SEAL_TXT		VARCHAR2(20)
+SEALO			VARCHAR2(50)		H6.22 Seal failure, other description
+IO_TYPE			NUMBER(2)		H7.23.a Incorrect operation type (see IO_TYPE_TXT)
+IO_TYPE_TXT		VARCHAR2(30)
+IO_TYPEO 		VARCHAR2(50)		H7.23.a Incorrect operation type , other
+IO_DRUG			NUMBER(5)		H7.23.b Employee that filed post-incident drug test
+IO_ALCO			NUMBER(5)		H7.23.b Employee that filed post-incident alcohol test
+MISC	 		VARCHAR2(1000)		H8.24 Miscellaneous, description
+UNKNOWN  		NUMBER(2)		H8.25 code (see UNKNOWN_TXT)
+UNKNOWN_TXT		VARCHAR2(16)
